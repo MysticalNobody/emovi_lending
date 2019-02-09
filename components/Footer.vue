@@ -25,7 +25,7 @@ export default {
   height: 15.2vh;
   background: black;
   align-items: center;
-  padding: 0 4.5vw;
+  padding: 0 2.5vw;
   justify-content: space-between;
 }
 .logo-text {
@@ -42,9 +42,6 @@ export default {
 }
 .logo-image {
   height: 72px;
-}
-.logo_1 {
-  width: 200px;
 }
 .logo {
   position: relative;

@@ -1,8 +1,10 @@
 <template>
   <div class="nav">
     <div :class="'logo logo_'+index" v-for="(logo, index) of logos" :key="logo.id">
-      <img class="logo-image" :src="logo.image">
-      <div class="logo-text">{{logo.text}}</div>
+      <a :href="logo.href" target="_blank">
+        <img class="logo-image" :src="logo.image">
+        <div class="logo-text">{{logo.text}}</div>
+      </a>
     </div>
   </div>
 </template>
@@ -12,7 +14,11 @@ export default {
     return {
       logos: [
         { image: "/images/e_logo1.svg", text: "emovi night" },
-        { image: "/images/e_logo2.svg", text: "Киношки Бауманские" }
+        {
+          image: "/images/e_logo2.svg",
+          text: "Киношки Бауманские",
+          href: "https://vk.com/kinobmstu"
+        }
       ]
     };
   }

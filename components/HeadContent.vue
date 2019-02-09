@@ -7,9 +7,9 @@
         <div class="item_text">{{item.text}}</div>
       </div>
     </div>
-    <a v-scroll-to="'.chose_emoji'">
+    <nuxt-link to="/emoji">
       <div class="head_content-href">Выбрать эмоции</div>
-    </a>
+    </nuxt-link>
   </div>
 </template>
 <script>
