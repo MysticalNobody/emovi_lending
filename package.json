@@ -4,10 +4,10 @@
   "description": " ",
   "author": "kit@itis.team",
   "private": true,
-  "config": {	    
+  "config": {
     "nuxt": {
-    "host": "0.0.0.0",
-    "port": "3333"
+      "host": "0.0.0.0",
+      "port": "3333"
     }
   },
   "scripts": {

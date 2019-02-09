@@ -1,6 +1,6 @@
 import axios from 'axios';
 export default class Api {
-    static async getFlims(emojis) {
+    static async getFilms(emojis) {
         return (await axios.get('https://dev.emovi.app/v1/movie/search?emo_ids=' + emojis, {
             headers: {
                 'API-Key': 'qMNVwrWAF7UEFK6j3bnwcvQvnU3Xet'

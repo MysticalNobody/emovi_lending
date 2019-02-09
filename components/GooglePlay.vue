@@ -21,20 +21,18 @@
         <a>Купить билет</a>
       </div>
     </div>
-    <div v-if="top_emoji[0]" class="chosen">
-      <div class="chosen-text">
-        Лидирующие эмоции
-        на киновечер 16.02
-      </div>
-      <div class="chosen-subtext">на основе всех оценок</div>
-      <div class="chosen_item" v-for="item of 3" :key="item.id">
-        <img class="chosen_item-emoji" :src="top_emoji[item-1].image">
-      </div>
-    </div>
     <div v-if="top_films[0]" class="films">
       <div class="title">Лидирующие фильмы на киновечер 16.02</div>
-      <div class="flim" v-for="item of 3" :key="item.id">
-        <div class="flim-img" :style="'background-image:url('+top_films[item-1]+')'"></div>
+      <div class="film" v-for="item of 3" :key="item.id">
+        <div class="film-img" :style="'background-image:url('+top_films[item-1]+')'"></div>
+        <div class="emojis">
+          <img
+            v-for="emoji of 3"
+            :key="emoji.id"
+            :src="top_emoji[''+(item-1)+''][''+(emoji-1)+''].image"
+            class="chosen_item-emoji"
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -45,24 +43,30 @@ import Emojis from "../emojis";
 export default {
   data() {
     return {
-      top_emoji: [],
+      top_emoji: [[], [], []],
       top_films: []
     };
   },
   mounted: async function() {
-    var data = (await Api.getResults())["1"].emotions;
-    for (var i = 0; i < data.length; i += 1) {
-      this.top_emoji.push(Emojis.getById(data[i]));
+    var data = await Api.getResults();
+    for (var i = 0; i < 3; i += 1) {
+      for (var j = 0; j < 3; j += 1) {
+        this.top_emoji[i].push(
+          Emojis.getById(data["" + (i + 1) + ""].emotions[j])
+        );
+      }
     }
-    this.films = await this.getFlims();
+    this.films = await this.getFilms();
   },
   methods: {
-    async getFlims() {
+    async getFilms() {
       this.films = [];
-      var _films = await Api.getFlims(this.top_emoji.map(e => e.id).join(","));
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 3; i += 1) {
+        var _films = await Api.getFilms(
+          this.top_emoji[i].map(e => e.id).join(",")
+        );
         try {
-          this.top_films.push(_films[i].poster);
+          this.top_films.push(_films[0].poster);
         } catch {}
       }
     }
@@ -80,7 +84,7 @@ export default {
   position: absolute;
   right: 9vw;
   font-weight: bold;
-  width: 350px;
+  width: 24vw;
   top: 7vh;
   text-align: center;
 }
@@ -88,31 +92,34 @@ export default {
   position: absolute;
   right: 5vw;
   font-weight: bold;
-  width: 500px;
+  width: 33vw;
   bottom: 10vh;
   text-align: center;
 }
 .buy_tickets .share-images {
-  width: 450px;
+  width: 30vw;
   margin: auto;
   margin-top: 2vh;
 }
 .share-images {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 .buy_tickets .share-images a {
-  width: 300px;
-  height: 70px;
-  padding-top: 10px;
-  font-size: 32px;
+  width: 19vw;
+  height: 5vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vw;
   color: black;
   border-radius: 60px;
   background: #ffaa34;
 }
 .text {
-  font-size: 43px;
+  font-size: 2.5vw;
 }
 .text img {
   position: absolute;
@@ -139,18 +146,17 @@ h2 {
 }
 .chosen_item {
   text-align: center;
-  width: 80px;
-  height: 80px;
+  width: 7vmin;
+  height: 7vmin;
   background: white;
   border-radius: 12px;
   margin-right: 36px;
-  margin-top: 1.5vh;
   position: relative;
   display: block;
 }
 .chosen_item-emoji {
-  width: 60px;
-  margin-top: 10px;
+  width: 5vmin;
+  margin-top: 1vmin;
 }
 .chosen-text {
   font-size: 40px;
@@ -164,27 +170,38 @@ h2 {
   position: absolute;
   bottom: -50px;
 }
-
 .films {
   position: absolute;
-  bottom: 10vh;
+  top: 20vh;
   left: 2.5vw;
   display: flex;
   justify-content: space-between;
-  width: 43vw;
+  width: 55vw;
 }
 .films .title {
   position: absolute;
-  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5vw;
   font-weight: bold;
 }
-.flim-img {
-  width: 13vw;
-  height: 20vw;
+.film-img {
+  width: 16vw;
+  height: 23vw;
   background-size: cover;
   margin-top: 70px;
   border-radius: 10px;
   background-position: center;
   background-repeat: no-repeat;
+}
+.film {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emojis {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>

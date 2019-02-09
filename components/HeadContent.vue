@@ -34,11 +34,11 @@ export default {
 </script>
 <style scoped>
 .head_content {
-  height: 80vh
+  height: 80vh;
 }
 h1 {
   text-align: center;
-  font-size: 44px;
+  font-size: 4vmin;
   margin-top: 6.5vh;
 }
 .items {
@@ -54,7 +54,7 @@ h1 {
   text-align: center;
 }
 .item_text {
-  font-size: 37px;
+  font-size: 3vmin;
   margin-top: 3vh;
 }
 .head_content-href {
@@ -66,9 +66,19 @@ h1 {
   margin-top: 9vh;
   border-radius: 50px;
   text-align: center;
-  padding-top: 14px;
-  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5.5vmin;
   color: black;
   font-weight: bold;
+}
+@media screen and (max-width: 1100px) {
+  .item_text {
+    font-size: 2.5vmin;
+  }
+  .head_content-href {
+    font-size: 4.5vmin;
+  }
 }
 </style>

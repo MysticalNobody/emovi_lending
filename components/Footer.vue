@@ -18,7 +18,7 @@ export default {
           text: "emovi ",
           href: "https://emovi.app"
         },
-        { image: "/images/vk.svg", text: "", href: "https://vk.com/emovi" }
+        { image: "/images/vk.svg", text: "" }
       ]
     };
   }

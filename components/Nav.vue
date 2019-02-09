@@ -15,8 +15,7 @@ export default {
       logos: [
         {
           image: "/images/e_logo1.svg",
-          text: "emovi night",
-          href: "https://emovi.app/"
+          text: "emovi night"
         },
         {
           image: "/images/e_logo2.svg",
@@ -38,20 +37,19 @@ export default {
 }
 .logo-text {
   position: absolute;
-  font-size: 50px;
+  font-size: 3vw;
   font-weight: bold;
   color: white;
 }
 .logo_0 .logo-text {
   width: 370px;
   left: 92px;
-  top: -22px;
-  font-size: 72px;
+  top: -12px;
+  font-size: 5vw;
 }
 .logo_1 .logo-text {
-  width: 300px;
   left: 126px;
-  top: -22px;
+  top: -12px;
 }
 .logo-image {
   height: 72px;

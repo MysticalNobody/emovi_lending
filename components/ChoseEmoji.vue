@@ -17,9 +17,9 @@
       </div>
     </div>
     <div v-if="chosen[0]" class="films">
-      <div class="flim" v-for="item of 3" :key="item.id">
+      <div class="film" v-for="item of 3" :key="item.id">
         <div
-          class="flim-img"
+          class="film-img"
           v-if="films[item-1]"
           :style="'background-image:url('+films[item-1]+')'"
         ></div>
@@ -48,14 +48,20 @@ export default {
     };
   },
   methods: {
-    async choseEmoji(emoji) {
-      if (this.chosen.lenght >= 3) return;
-      this.chosen.push(emoji);
-      await this.getFlims();
+    choseEmoji(emoji) {
+      var isUnique = true;
+      this.chosen.forEach(_emoji => {
+        if (_emoji == emoji) isUnique = false;
+      });
+      if (this.chosen.length <= 3 && isUnique) {
+        console.log(emoji);
+        this.chosen.push(emoji);
+        this.getFilms();
+      }
     },
-    async getFlims() {
+    async getFilms() {
       this.films = [];
-      var _films = await Api.getFlims(this.chosen.map(e => e.id).join(","));
+      var _films = await Api.getFilms(this.chosen.map(e => e.id).join(","));
       for (var i = 0; i < 3; i++) {
         try {
           this.films.push(_films[i].poster);
@@ -71,7 +77,7 @@ export default {
     async deleteEmoji(id) {
       if (this.chosen.lenght <= 0) return;
       this.chosen.splice(id, 1);
-      await this.getFlims();
+      await this.getfilms();
     }
   }
 };
@@ -82,12 +88,12 @@ h2 {
   position: absolute;
   right: 32vw;
   top: 7.5vh;
-  font-size: 42px;
+  font-size: 3vw;
 }
 .chose_emotions {
   top: 39.5vh;
   left: 51.5vw;
-  width: 550px;
+  width: 40vw;
 }
 .chose_emoji {
   height: 99vh;
@@ -118,8 +124,8 @@ h2 {
 }
 .chosen_item {
   text-align: center;
-  width: 80px;
-  height: 80px;
+  width: 7vmin;
+  height: 7vmin;
   background: white;
   border-radius: 12px;
   margin-right: 36px;
@@ -127,17 +133,16 @@ h2 {
   display: block;
 }
 .chosen_item-emoji {
-  width: 60px;
-  margin-top: 10px;
-  margin-left: 5px;
+  width: 5vmin;
+  margin-top: 1vmin;
 }
 .chosen_item-close {
   cursor: pointer;
-  width: 35px;
-  height: 35px;
+  width: 3vmin;
+  height: 3vmin;
   position: absolute;
-  top: -17px;
-  right: -17px;
+  top: -1.3vmin;
+  right: -1.3vmin;
 }
 .films {
   position: absolute;
@@ -147,9 +152,9 @@ h2 {
   justify-content: space-between;
   width: 57vw;
 }
-.flim-img {
+.film-img {
   width: 16vw;
-  height: 25vw;
+  height: 24vw;
   background-size: cover;
   border-radius: 10px;
   background-position: center;
@@ -173,5 +178,23 @@ h2 {
 
 .disabled {
   background: #219b19;
+}
+@media screen and (max-width: 992px) {
+  h2 {
+    right: initial;
+    left: 5vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .films {
+    top: 17vh;
+    align-items: center;
+    flex-direction: column;
+    height: 75vh;
+  }
+  .film-img {
+    width: 16vh;
+    height: 24vh;
+  }
 }
 </style>
