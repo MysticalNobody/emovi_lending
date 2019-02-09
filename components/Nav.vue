@@ -13,7 +13,11 @@ export default {
   data() {
     return {
       logos: [
-        { image: "/images/e_logo1.svg", text: "emovi night" },
+        {
+          image: "/images/e_logo1.svg",
+          text: "emovi night",
+          href: "https://emovi.app/"
+        },
         {
           image: "/images/e_logo2.svg",
           text: "Киношки Бауманские",

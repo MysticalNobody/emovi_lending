@@ -7,7 +7,7 @@
       </div>
       <div class="share-images">
         <img src="images/e_logo1.svg">
-        <a>
+        <a href="https://play.google.com/store/apps/details?id=app.emovi" target="_blank">
           <img src="images/google-play-badge.svg">
         </a>
       </div>

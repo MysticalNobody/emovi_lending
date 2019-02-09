@@ -1,8 +1,10 @@
 <template>
   <div class="footer">
     <div :class="'logo logo_'+index" v-for="(logo, index) of logos" :key="logo.id">
-      <img class="logo-image" :src="logo.image">
-      <div class="logo-text">{{logo.text}}</div>
+      <a :href="logo.href" target="_blank">
+        <img class="logo-image" :src="logo.image">
+        <div class="logo-text">{{logo.text}}</div>
+      </a>
     </div>
   </div>
 </template>
@@ -11,8 +13,12 @@ export default {
   data() {
     return {
       logos: [
-        { image: "/images/e_logo1.svg", text: "emovi " },
-        { image: "/images/vk.svg", text: "" }
+        {
+          image: "/images/e_logo1.svg",
+          text: "emovi ",
+          href: "https://emovi.app"
+        },
+        { image: "/images/vk.svg", text: "", href: "https://vk.com/emovi" }
       ]
     };
   }
