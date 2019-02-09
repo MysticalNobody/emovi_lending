@@ -1,7 +1,11 @@
 import axios from 'axios';
 export default class Api {
     static async getFlims(emojis) {
-        return (await axios.get('https://api.emovi.app/v1/movie/search?emo_ids=' + emojis)).data.results;
+        return (await axios.get('https://dev.emovi.app/v1/movie/search?emo_ids=' + emojis, {
+            headers: {
+                'API-Key': 'qMNVwrWAF7UEFK6j3bnwcvQvnU3Xet'
+	    }
+            })).data.results;
     }
     static async getResults() {
         return (await axios.get('https://dev.emovi.app/v1/night/result', {
