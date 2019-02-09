@@ -1,0 +1,18 @@
+
+@font-face {
+    font-family: "Circe";
+    src: url("fonts/CIRCE-BOLD.TTF");
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: "Circe";
+    src: url("fonts/CIRCE-REGULAR.TTF");
+  }
+
+  body {
+    font-family: "Circe";
+    background-color: #0e0e0e;
+    margin: auto;
+    color: white;
+  }
