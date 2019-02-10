@@ -101,7 +101,7 @@ export default {
   position: absolute;
   right: 50px;
   font-weight: bold;
-  width: 300px;
+  width: 360px;
   bottom: 10vh;
   text-align: center;
 }
@@ -109,14 +109,16 @@ export default {
   margin: auto;
   justify-content: space-evenly;
   display: flex;
+  margin-top: 20px;
 }
 .share-images {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 20px;
 }
 .share .share-images {
-  width: 300px;
+  width: 100%;
 }
 .buy_tickets .share-images a {
   width: 24vmin;
@@ -228,6 +230,14 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+@media screen and (max-width: 1150px) {
+  .buy_tickets {
+    width: 300px;
+  }
+  .share {
+    width: 300px;
+  }
 }
 @media screen and (max-width: 970px) {
   .films_container {
