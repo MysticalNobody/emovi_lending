@@ -85,9 +85,9 @@ export default {
 h2 {
   text-align: center;
   position: absolute;
-  right: 32vw;
+  left: 39vw;
   top: 7.5vh;
-  font-size: 3vw;
+  font-size: 28px;
 }
 .chose_emotions {
   top: 39.5vh;
@@ -123,8 +123,8 @@ h2 {
 }
 .chosen_item {
   text-align: center;
-  width: 7vmin;
-  height: 7vmin;
+  width: 60px;
+  height: 60px;
   background: white;
   border-radius: 12px;
   margin-right: 36px;
@@ -132,28 +132,29 @@ h2 {
   display: block;
 }
 .chosen_item-emoji {
-  width: 5vmin;
-  margin-top: 1vmin;
+  width: 50px;
+  margin-top: 5px;
 }
 .chosen_item-close {
   cursor: pointer;
-  width: 3vmin;
-  height: 3vmin;
+  width: 25px;
+  height: 25px;
   position: absolute;
-  top: -1.3vmin;
-  right: -1.3vmin;
+  top: -12px;
+  right: -12px;
 }
 .films {
   position: absolute;
   top: 23vh;
-  left: 38.5vw;
+  right: 3.5vw;
+  left: initial;
   display: flex;
   justify-content: space-between;
-  width: 57vw;
+  width: 46vw;
 }
 .film-img {
-  width: 16vw;
-  height: 24vw;
+  width: 14vw;
+  height: 21vw;
   background-size: cover;
   border-radius: 10px;
   background-position: center;
@@ -161,16 +162,19 @@ h2 {
 }
 .chose_emoji-href {
   cursor: pointer;
-  height: 85px;
+  height: 65px;
   background: #ffaa34;
-  width: 650px;
+  width: 45vw;
   bottom: 5vh;
   position: absolute;
   border-radius: 50px;
   text-align: center;
-  padding-top: 7px;
-  right: 17vw;
-  font-size: 50px;
+  padding-top: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 5vw;
+  font-size: 30px;
   color: black;
   font-weight: bold;
 }
@@ -178,54 +182,44 @@ h2 {
 .disabled {
   background: #219b19;
 }
-@media screen and (max-width: 992px) {
+
+@media screen and (max-width: 1250px) {
   h2 {
-    right: initial;
-    left: 5vw;
+    font-size: 22px;
   }
 }
-@media screen and (max-width: 970px) {
-  .films {
-    position: absolute;
-    top: 23vh;
-    right: 3.5vw;
-    left: initial;
-    display: flex;
-    justify-content: space-between;
-    width: 46vw;
-  }
-  .chose_emoji-href {
-    cursor: pointer;
-    height: 65px;
-    background: #ffaa34;
-    width: 45vw;
-    bottom: 5vh;
-    position: absolute;
-    border-radius: 50px;
+@media screen and (max-width: 1100px) {
+  h2 {
+    font-size: 25px;
+    right: initial;
     text-align: center;
-    padding-top: initial;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 5vw;
-    font-size: 30px;
-    color: black;
-    font-weight: bold;
+    position: absolute;
+    left: 51vw;
+    top: 20.5vh;
   }
-  .film-img {
-    width: 14vw;
-    height: 21vw;
-    background-size: cover;
-    border-radius: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
+}
+@media screen and (max-width: 1000px) {
+  h2 {
+    font-size: 19px;
   }
+}
+@media screen and (max-width: 1100px) {
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 30vw;
     margin-left: -2.5vw;
     margin-top: 12.5vh;
+  }
+  .films {
+    position: absolute;
+    top: 30vh;
+    right: 3.5vw;
+    left: auto;
+    left: initial;
+    display: flex;
+    justify-content: space-between;
+    width: 46vw;
   }
   .item {
     cursor: pointer;
