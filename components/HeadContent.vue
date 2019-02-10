@@ -78,7 +78,20 @@ h1 {
     font-size: 2.5vmin;
   }
   .head_content-href {
-    font-size: 4.5vmin;
+    cursor: pointer;
+    height: 70px;
+    background: #ffaa34;
+    width: 35vw;
+    margin: auto;
+    margin-top: 6vh;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
   }
 }
 </style>

@@ -36,31 +36,46 @@ export default {
   justify-content: space-between;
 }
 .logo-text {
-  position: absolute;
+  display: inline-block;
   font-size: 3vw;
   font-weight: bold;
   color: white;
 }
 .logo_0 .logo-text {
-  width: 370px;
-  left: 92px;
-  top: -12px;
   font-size: 5vw;
 }
 .logo_1 .logo-text {
-  left: 126px;
-  top: -12px;
+  width: 15vw;
+}
+.logo_0 {
+  width: 35vw;
+}
+.logo_1 {
+  width: 25vw;
 }
 .logo-image {
   height: 72px;
-}
-.logo_1 {
-  width: 375px;
+  display: inline-block;
 }
 .logo_1 .logo-image {
   height: 100px;
+  display: inline-block;
+}
+
+.logo a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo {
   position: relative;
+}
+@media screen and (max-width: 1100px) {
+  .logo_1 .logo-image {
+    height: 72px;
+  }
+  .logo_0 .logo-image {
+    height: 70px;
+  }
 }
 </style>

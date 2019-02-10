@@ -52,4 +52,23 @@ export default {
 .logo {
   position: relative;
 }
+
+@media screen and (max-width: 970px) and (min-height: 850px) {
+  .logo_0 .logo-text {
+    width: initial;
+    left: 10vw;
+    top: initial;
+    display: inline-block;
+    font-size: 10vw;
+  }
+  .logo-text {
+    position: initial;
+    font-weight: bold;
+    color: white;
+  }
+  .logo-image {
+    height: 7vw;
+    display: inline-block;
+  }
+}
 </style>

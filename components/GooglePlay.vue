@@ -6,9 +6,9 @@
         фильмов по emoji
       </div>
       <div class="share-images">
-        <img src="images/e_logo1.svg">
+        <img class="smile" src="images/e_logo1.svg">
         <a href="https://play.google.com/store/apps/details?id=app.emovi" target="_blank">
-          <img src="images/google-play-badge.svg">
+          <img class="gp_logo" src="images/google-play-badge.svg">
         </a>
       </div>
     </div>
@@ -17,21 +17,23 @@
         <br>киновечер, на котором вы решаете, что смотреть
       </div>
       <div class="share-images">
-        <img src="images/1f60d.svg">
+        <img class="smile" src="images/1f60d.svg">
         <a>Купить билет</a>
       </div>
     </div>
-    <div v-if="top_films[0]" class="films">
-      <div class="title">Лидирующие фильмы на киновечер 16.02</div>
-      <div class="film" v-for="item of 3" :key="item.id">
-        <div class="film-img" :style="'background-image:url('+top_films[item-1]+')'"></div>
-        <div class="emojis">
-          <img
-            v-for="emoji of 3"
-            :key="emoji.id"
-            :src="top_emoji[''+(item-1)+''][''+(emoji-1)+''].image"
-            class="chosen_item-emoji"
-          >
+    <div class="films_container">
+      <div v-if="top_films[0]" class="films">
+        <div class="title">Лидирующие фильмы на киновечер 16.02</div>
+        <div class="film" v-for="item of 3" :key="item.id">
+          <div class="film-img" :style="'background-image:url('+top_films[item-1]+')'"></div>
+          <div class="emojis">
+            <img
+              v-for="emoji of 3"
+              :key="emoji.id"
+              :src="top_emoji[''+(item-1)+''][''+(emoji-1)+''].image"
+              class="chosen_item-emoji"
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -82,44 +84,60 @@ export default {
 }
 .share {
   position: absolute;
-  right: 9vw;
+  right: 50px;
   font-weight: bold;
-  width: 24vw;
-  top: 7vh;
+  width: 300px;
   text-align: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  top: 7vh;
 }
+.share .text {
+  width: 250px;
+}
+
 .buy_tickets {
   position: absolute;
-  right: 5vw;
+  right: 50px;
   font-weight: bold;
-  width: 33vw;
+  width: 300px;
   bottom: 10vh;
   text-align: center;
 }
 .buy_tickets .share-images {
-  width: 30vw;
   margin: auto;
-  margin-top: 2vh;
+  justify-content: space-evenly;
+  display: flex;
 }
 .share-images {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
+.share .share-images {
+  width: 300px;
+}
 .buy_tickets .share-images a {
-  width: 19vw;
-  height: 5vw;
+  width: 24vmin;
+  height: 5vmin;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2vw;
+  font-size: 3vmin;
   color: black;
   border-radius: 60px;
   background: #ffaa34;
 }
+.gp_logo {
+  height: 9vmin;
+}
+.share-images .smile {
+  height: 6vmin;
+}
 .text {
-  font-size: 2.5vw;
+  font-size: 26px;
 }
 .text img {
   position: absolute;
@@ -170,13 +188,20 @@ h2 {
   position: absolute;
   bottom: -50px;
 }
+.films_container {
+  width: 60vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 .films {
-  position: absolute;
-  top: 20vh;
+  position: relative;
   left: 2.5vw;
   display: flex;
   justify-content: space-between;
-  width: 55vw;
+  width: 100%;
+  margin: auto;
 }
 .films .title {
   position: absolute;
@@ -203,5 +228,134 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+@media screen and (max-width: 970px) {
+  .films_container {
+    width: 90vw;
+    margin: auto;
+  }
+  .share {
+    position: absolute;
+    left: 50px;
+    right: initial;
+    top: initial;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    bottom: 7vh;
+  }
+  .films {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 970px) and (min-height: 1000px) {
+  .film-img {
+    width: 27vw;
+    height: 40vw;
+    background-size: cover;
+    margin-top: 70px;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .buy_tickets .share-images a {
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: black;
+    border-radius: 60px;
+    background: #ffaa34;
+  }
+  .buy_tickets .share-images {
+    margin: auto;
+    justify-content: space-evenly;
+    display: flex;
+    width: 40vw;
+  }
+  .buy_tickets .text {
+    width: 330px;
+    margin: auto;
+  }
+  .buy_tickets {
+    position: absolute;
+    right: initial;
+    font-weight: bold;
+    width: 100vw;
+    bottom: 10vh;
+    text-align: center;
+  }
+  .films .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .share-images .smile {
+    height: 40px;
+  }
+  .share {
+    position: absolute;
+    left: 0;
+    right: auto;
+    right: 0;
+    top: auto;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    bottom: 30vh;
+  }
+}
+@media screen and (max-width: 970px) and (max-height: 770px) {
+  .share {
+    position: absolute;
+    top: auto;
+    top: 100px;
+    left: initial;
+    right: 50px;
+    font-weight: bold;
+    width: 25vw;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    bottom: 7vh;
+  }
+  .text {
+    font-size: 2vw;
+  }
+  .share .text {
+    width: 20vw;
+  }
+  .buy_tickets {
+    position: absolute;
+    right: 50px;
+    font-weight: bold;
+    width: 25vw;
+    bottom: 10vh;
+    text-align: center;
+  }
+  .films_container {
+    width: 60vw;
+    margin: auto;
+    margin-left: 50px;
+  }
 }
 </style>

@@ -53,8 +53,7 @@ export default {
       this.chosen.forEach(_emoji => {
         if (_emoji == emoji) isUnique = false;
       });
-      if (this.chosen.length <= 3 && isUnique) {
-        console.log(emoji);
+      if (this.chosen.length < 3 && isUnique) {
         this.chosen.push(emoji);
         this.getFilms();
       }
@@ -77,7 +76,7 @@ export default {
     async deleteEmoji(id) {
       if (this.chosen.lenght <= 0) return;
       this.chosen.splice(id, 1);
-      await this.getfilms();
+      await this.getFilms();
     }
   }
 };
@@ -185,16 +184,54 @@ h2 {
     left: 5vw;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 970px) {
   .films {
-    top: 17vh;
+    position: absolute;
+    top: 23vh;
+    right: 3.5vw;
+    left: initial;
+    display: flex;
+    justify-content: space-between;
+    width: 46vw;
+  }
+  .chose_emoji-href {
+    cursor: pointer;
+    height: 65px;
+    background: #ffaa34;
+    width: 45vw;
+    bottom: 5vh;
+    position: absolute;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: initial;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 75vh;
+    right: 5vw;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
   }
   .film-img {
-    width: 16vh;
-    height: 24vh;
+    width: 14vw;
+    height: 21vw;
+    background-size: cover;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 30vw;
+    margin-left: -2.5vw;
+    margin-top: 12.5vh;
+  }
+  .item {
+    cursor: pointer;
+    margin-top: 0.5vh;
+    text-align: center;
+    margin-left: 0.5vw;
   }
 }
 </style>
