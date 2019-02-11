@@ -150,7 +150,7 @@ h2 {
   left: initial;
   display: flex;
   justify-content: space-between;
-  width: 46vw;
+  width: 57vw;
 }
 .film-img {
   width: 14vw;

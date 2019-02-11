@@ -18,7 +18,7 @@ export default {
           text: "emovi night"
         },
         {
-          image: "/images/e_logo2.svg",
+          image: "/images/logo2.svg",
           text: "Киношки Бауманские",
           href: "https://vk.com/kinobmstu"
         }
