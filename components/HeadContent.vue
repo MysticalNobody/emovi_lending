@@ -33,13 +33,10 @@ export default {
 };
 </script>
 <style scoped>
-.head_content {
-  height: 80vh;
-}
 h1 {
   text-align: center;
   font-size: 4vmin;
-  margin-top: 6.5vh;
+  margin-top: 12.5vh;
 }
 .items {
   display: flex;
@@ -56,6 +53,9 @@ h1 {
 .item_text {
   font-size: 3vmin;
   margin-top: 3vh;
+}
+.item-image {
+  height: 12vh;
 }
 .head_content-href {
   cursor: pointer;
