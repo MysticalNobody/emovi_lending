@@ -74,7 +74,8 @@ h1 {
   font-weight: bold;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1650px),
+  screen and (min-height: 1000px) and (max-width: 1700) {
   h1 {
     text-align: center;
     font-size: 31px;
@@ -145,7 +146,8 @@ h1 {
     width: 100%;
   }
 }
-@media screen and (max-width: 700px), screen and (max-width: 900px) and (min-width: 500px) {
+@media screen and (max-width: 700px),
+  screen and (max-width: 900px) and (min-width: 500px) {
   h1 {
     text-align: center;
     font-size: 21px;
