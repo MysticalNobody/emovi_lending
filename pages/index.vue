@@ -16,3 +16,15 @@ export default {
   }
 };
 </script>
+<style>
+#index-page {
+  max-width: 1920px;
+  margin: auto;
+}
+@media screen and (max-width: 1600px) {
+  #index-page {
+    max-width: 1024px;
+    margin: auto;
+  }
+}
+</style>

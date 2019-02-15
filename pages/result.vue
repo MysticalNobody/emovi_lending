@@ -1,17 +1,20 @@
 <template>
-  <div id="index-page">
+  <div id="result-page">
     <GooglePlay/>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import GooglePlay from "../components/GooglePlay";
-import Footer from "../components/Footer";
 export default {
   components: {
-    GooglePlay,
-    Footer
+    GooglePlay
   }
 };
 </script>
+<style>
+#result-page {
+  background: #090909;
+  height: 100vh;
+}
+</style>
