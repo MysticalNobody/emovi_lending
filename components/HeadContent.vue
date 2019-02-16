@@ -280,7 +280,7 @@ h1 {
     font-weight: bold;
   }
 }
-@media screen and (max-width: 400px) and (min-height: 500px) {
+@media screen and (max-width: 500px) and (min-height: 500px) {
   .items {
     display: flex;
     margin: auto;

@@ -42,8 +42,9 @@
 
       <a class="vote" @click="sendVote()">
         <div
+          :class="chosen.length<3?'disabled':voted?'vote-chosen':''"
           class="chose_emoji-href"
-        >{{voted?'Ваш голос учтён':chosen.length!=3?('Осталось выбрать '+(3-chosen.length)+ ' эмоции(ю)'):'Проголосовать за эмоции'}}</div>
+        >{{voted?'Ваш голос учтён':chosen.length==2?('Осталось выбрать 1 эмоцию'):chosen.length!=3?('Осталось выбрать '+(3-chosen.length)+ ' эмоциии'):'Проголосовать за эмоции'}}</div>
       </a>
     </div>
   </div>
@@ -89,6 +90,7 @@ export default {
     },
     async sendVote() {
       if (this.voted) return;
+      if (this.chosen.length != 3) return;
       this.voted = true;
       await Api.sendVote(this.chosen.map(e => e.id));
       this.$router.push("/result");
@@ -213,9 +215,13 @@ h2 {
   justify-content: center;
 }
 .disabled {
-  background: #219b19;
+  cursor: initial;
+  opacity: 0.3;
 }
-
+.vote-chosen {
+  background: transparent;
+  color: #219b19;
+}
 @media screen and (max-width: 1250px) {
   h2 {
     font-size: 22px;

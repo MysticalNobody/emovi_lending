@@ -118,7 +118,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 33px;
+  margin-top: 26px;
 }
 .ap_logo {
   height: 6vmin;
@@ -239,11 +239,12 @@ h2 {
   width: 100%;
   margin-top: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 .emojis span {
-  font-size: 12px;
+  font-size: 16px;
+  margin-left: 15px;
 }
 @media screen and (max-width: 1500px) {
   .text {
