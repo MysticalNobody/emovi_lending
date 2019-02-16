@@ -432,7 +432,7 @@ h2 {
 }
 
 @media screen and (max-width: 1100px) and (min-height: 1000px),
-  screen and (max-width: 900px) and (min-height: 500px) {
+  screen and (max-width: 900px) and (min-height: 400px) {
   .items .active {
     border-radius: 200px;
     background: white;
@@ -549,7 +549,7 @@ h2 {
     font-weight: bold;
   }
 }
-@media screen and (max-width: 700px) and (min-height: 500px) {
+@media screen and (max-width: 700px) and (min-height: 400px) {
   .vote {
     width: 100%;
     display: flex;
@@ -582,7 +582,7 @@ h2 {
     color: black;
     font-weight: bold;
   }
-  
+
   h2 {
     font-size: 29px;
     width: auto;
@@ -609,6 +609,29 @@ h2 {
     font-size: 8px;
     text-align: center;
     margin: auto;
+  }
+}
+@media screen and (max-width: 900px) and (min-height: 400px) and (max-height: 500px) {
+  h2 {
+    font-size: 20px;
+    width: auto;
+    width: 100%;
+    top: -15vh;
+    left: 0;
+  }
+  .vote {
+    width: 100%;
+    display: flex;
+    right: auto;
+    right: initial;
+    bottom: 9vh;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-top: initial;
+    position: absolute;
+    bottom: -58vh;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
