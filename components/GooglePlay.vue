@@ -495,7 +495,7 @@ h2 {
     left: 10px;
     font-weight: bold;
     height: 100px;
-    bottom: 14vh;
+    bottom: 20vh;
     text-align: center;
   }
   .text div {
@@ -538,7 +538,7 @@ h2 {
     align-items: flex-start;
     flex-direction: column;
     display: flex;
-    bottom: -7vh;
+    bottom: 1vh;
   }
 }
 @media screen and (max-width: 600px) and (min-height: 500px) {
