@@ -29,7 +29,7 @@
     </div>
     <div class="films_container">
       <div v-if="top_films[0]" class="films">
-        <div class="title">Лидирующие фильмы на киновечер 16.02</div>
+        <div class="title">Лидирующие фильмы на киновечер 23.02</div>
         <div class="film" v-for="item of 3" :key="item.id">
           <a
             v-if="top_films[item-1]"
