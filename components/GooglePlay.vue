@@ -4,7 +4,7 @@
       <div class="text">
         <img class="pre-image" src="images/12802.svg">
         <span>emovi</span>
-        <div>поиск фильмов по emoji</div>
+        <div>Поиск фильмов по emoji</div>
       </div>
       <div class="share-images">
         <a href="https://play.google.com/store/apps/details?id=app.emovi" target="_blank">
@@ -29,7 +29,7 @@
     </div>
     <div class="films_container">
       <div v-if="top_films[0]" class="films">
-        <div class="title">Лидирующие фильмы на киновечер 23.02</div>
+        <div class="title">Лидирующие фильмы на киновечер 22.02</div>
         <div class="film" v-for="item of 3" :key="item.id">
           <a
             v-if="top_films[item-1]"
@@ -368,92 +368,6 @@ h2 {
     flex-direction: row;
   }
 }
-@media screen and (max-width: 600px) and (min-height: 500px) {
-  .film-img {
-    width: 85px;
-    height: 125px;
-  }
-  .emojis span {
-    font-size: 9px;
-    margin-left: 5px;
-  }
-  .chosen_item-emoji {
-    width: 22px;
-  }
-  .films_container {
-    width: 95%;
-    height: 45vh;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
-  .films {
-    position: relative;
-    left: initial;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto;
-  }
-  .films .title {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-  }
-  .buy_tickets {
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
-    height: 100px;
-    bottom: 20vh;
-    text-align: center;
-  }
-  .text div {
-    font-weight: normal;
-    width: 100%;
-    font-size: 14px;
-  }
-  .text {
-    font-size: 20px;
-    text-align: left;
-  }
-  .ap_logo,
-  .buy {
-    height: 31px;
-  }
-  .gp_logo {
-    height: 44px;
-  }
-  .text img {
-    height: 30px;
-  }
-  .share .text div {
-    font-weight: normal;
-    width: 100%;
-    font-size: 14px;
-  }
-  .share-images {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 20px;
-  }
-  .share {
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
-    width: 278px;
-    height: 100px;
-    text-align: center;
-    align-items: flex-start;
-    flex-direction: column;
-    display: flex;
-    bottom: 0vh;
-  }
-}
 @media screen and (max-width: 900px) and (max-height: 500px) {
   .emojis span {
     font-size: 9px;
@@ -528,6 +442,9 @@ h2 {
     display: flex;
     margin-top: 2px;
   }
+  .chosen_item-emoji {
+    width: 22px;
+  }
   .buy_tickets {
     position: absolute;
     left: 125px;
@@ -535,6 +452,102 @@ h2 {
     height: 75px;
     bottom: 0vh;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-height: 400px) {
+  .film-img {
+    width: 85px;
+    height: 125px;
+  }
+  .emojis span {
+    font-size: 9px;
+    margin-left: 5px;
+  }
+  .chosen_item-emoji {
+    width: 22px;
+  }
+  .films_container {
+    width: 90%;
+    height: 45vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .films {
+    position: relative;
+    left: initial;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+  }
+  .films .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .buy_tickets {
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    height: 100px;
+    bottom: 14vh;
+    text-align: center;
+  }
+  .text div {
+    font-weight: normal;
+    width: 100%;
+    font-size: 14px;
+  }
+  .text {
+    font-size: 20px;
+    text-align: left;
+  }
+  .ap_logo,
+  .buy {
+    height: 31px;
+  }
+  .gp_logo {
+    height: 44px;
+  }
+  .text img {
+    height: 30px;
+  }
+  .share .text div {
+    font-weight: normal;
+    width: 100%;
+    font-size: 14px;
+  }
+  .share-images {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .share {
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    width: 278px;
+    height: 100px;
+    text-align: center;
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+    bottom: -7vh;
+  }
+}
+@media screen and (max-width: 600px) and (min-height: 500px) {
+  .films .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
   }
 }
 @media screen and (max-width: 600px) and (max-height: 400px) {
@@ -549,6 +562,9 @@ h2 {
     flex-direction: column;
     display: flex;
     bottom: -5vh;
+  }
+  .chosen_item-emoji {
+    width: 22px;
   }
   .buy_tickets {
     position: absolute;

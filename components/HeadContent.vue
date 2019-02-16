@@ -1,6 +1,8 @@
 <template>
   <div class="head_content">
-    <h1>Киновечер, на котором вы решаете, <br>что смотреть.</h1>
+    <h1>Киновечер, на котором вы решаете,
+      <br>что смотреть.
+    </h1>
     <div class="items">
       <div class="item" v-for="item of items" :key="item.id">
         <img class="item-image" :src="item.image">
@@ -231,7 +233,7 @@ h1 {
     margin-top: 70px;
   }
 }
-@media screen and (max-width: 500px) and (min-height: 500px) {
+@media screen and (max-width: 500px) and (min-height: 400px) {
   .item-image {
     height: 30px;
     width: 50px;
@@ -263,6 +265,11 @@ h1 {
     width: 82%;
     margin-top: 70px;
   }
+  h1 {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 9.5vh;
+  }
   .head_content-href {
     cursor: pointer;
     height: 48px;
@@ -279,8 +286,6 @@ h1 {
     color: black;
     font-weight: bold;
   }
-}
-@media screen and (max-width: 500px) and (min-height: 500px) {
   .items {
     display: flex;
     margin: auto;
@@ -303,6 +308,13 @@ h1 {
     width: 70%;
     margin-top: 0;
     margin-top: initial;
+  }
+}
+@media screen and (max-width: 500px) and (min-height: 500px) {
+  h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 9.5vh;
   }
 }
 </style>

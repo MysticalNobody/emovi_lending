@@ -219,8 +219,8 @@ h2 {
   opacity: 0.3;
 }
 .vote-chosen {
-  background: transparent;
-  color: #219b19;
+  background: transparent !important;
+  color: #219b19 !important;
 }
 @media screen and (max-width: 1250px) {
   h2 {
@@ -582,6 +582,7 @@ h2 {
     color: black;
     font-weight: bold;
   }
+  
   h2 {
     font-size: 29px;
     width: auto;
