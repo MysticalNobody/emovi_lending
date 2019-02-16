@@ -60,10 +60,11 @@ export default {
   mounted: async function() {
     var data = await Api.getResults();
     for (var i = 0; i < 3; i += 1) {
-      this.top_emoji[i].push(
-        Emojis.getById(data["" + (i + 1) + ""].emotions[0])
-      );
+      for (var j = 0; j < 3; j += 1) {
+        this.top_emoji[i].push(Emojis.getById(data[i + 1].emotions[j]));
+      }
     }
+    console.log(this.top_emoji);
     this.films = await this.getFilms();
   },
   methods: {
@@ -320,7 +321,7 @@ h2 {
     height: 33px;
   }
 }
-@media screen and (max-width: 1000px) and (min-height: 700px) {
+@media screen and (max-width: 1000px) and (min-height: 750px) {
   .buy_tickets .share-images {
     margin: auto;
     justify-content: center;
@@ -512,7 +513,7 @@ h2 {
     height: 31px;
   }
   .gp_logo {
-    height: 44px;
+    height: 46px;
   }
   .text img {
     height: 30px;
