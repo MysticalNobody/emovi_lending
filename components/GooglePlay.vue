@@ -10,7 +10,7 @@
         <a href="https://play.google.com/store/apps/details?id=app.emovi" target="_blank">
           <img class="gp_logo" src="images/google-play-badge.svg">
         </a>
-        <a href="https://testflight.apple.com/join/eSbmXUPP" target="_blank">
+        <a href="http://emovi.app/#subscribe" target="_blank">
           <img class="ap_logo" src="images/app_store.svg">
         </a>
       </div>
