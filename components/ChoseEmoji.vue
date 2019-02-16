@@ -115,8 +115,8 @@ h2 {
 }
 .chose_emotions {
   top: 39.5vh;
-  left: 45.5vw;
-  width: 45vw;
+  left: 45vw;
+  width: 44.5vw;
 }
 .chose_emoji {
   height: 99vh;
