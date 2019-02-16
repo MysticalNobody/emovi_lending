@@ -40,11 +40,10 @@
         </div>
       </div>
 
-      <a class="vote" @click="sendVote()" v-if="chosen[2]">
+      <a class="vote" @click="sendVote()">
         <div
-          :class="voted?'disabled':''"
           class="chose_emoji-href"
-        >{{voted?'Ваш голос учтён':'Проголосовать за эмоции'}}</div>
+        >{{voted?'Ваш голос учтён':chosen.length!=3?('Осталось выбрать '+(3-chosen.length)+ ' эмоции(ю)'):'Проголосовать за эмоции'}}</div>
       </a>
     </div>
   </div>
@@ -95,9 +94,11 @@ export default {
       this.$router.push("/result");
     },
     async deleteEmoji(id) {
-      if (this.chosen.lenght <= 0) return;
+      if (this.chosen.length <= 0) return;
       this.chosen.splice(id, 1);
-      await this.getFilms();
+      if (this.chosen.length > 0) {
+        await this.getFilms();
+      }
     }
   }
 };
@@ -190,11 +191,11 @@ h2 {
   cursor: pointer;
   height: 65px;
   background: #ffaa34;
-  width: 45vw;
+  width: 480px;
   bottom: 5vh;
-  position: absolute;
   border-radius: 50px;
   text-align: center;
+  padding-top: 0;
   padding-top: initial;
   display: flex;
   justify-content: center;
@@ -204,7 +205,13 @@ h2 {
   color: black;
   font-weight: bold;
 }
-
+.vote {
+  position: absolute;
+  width: 57vw;
+  right: 3.5vw;
+  display: flex;
+  justify-content: center;
+}
 .disabled {
   background: #219b19;
 }
@@ -412,8 +419,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* right: 5vw; */
-    font-size: 20px;
+    font-size: 17px;
     color: black;
     font-weight: bold;
   }
@@ -453,10 +459,10 @@ h2 {
     display: flex;
   }
   .items {
-    width: 90%;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin: auto;
-    height: 285px;
+    height: 225px;
   }
   h2 {
     font-size: 29px;
@@ -492,16 +498,12 @@ h2 {
     width: 100%;
   }
   .vote {
-    width: 100%;
-    display: flex;
-    right: initial;
-    bottom: 9vh;
-    margin-bottom: 7vh;
-    margin-top: initial;
     position: absolute;
-    bottom: -43vh;
+    width: 84vw;
+    right: 3.5vw;
+    bottom: -32vh;
+    display: flex;
     justify-content: center;
-    align-items: center;
   }
   img.item-image {
     width: 40px;
@@ -556,6 +558,24 @@ h2 {
     justify-content: center;
     align-items: center;
   }
+  .chose_emoji-href {
+    cursor: pointer;
+    height: 45px;
+    background: #ffaa34;
+    width: 90vw;
+    bottom: 5vh;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 0;
+    padding-top: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 5vw;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+  }
   h2 {
     font-size: 29px;
     width: auto;
@@ -579,7 +599,7 @@ h2 {
     align-items: center;
   }
   .item_text {
-    font-size: 7px;
+    font-size: 8px;
     text-align: center;
     margin: auto;
   }

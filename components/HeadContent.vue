@@ -1,6 +1,6 @@
 <template>
   <div class="head_content">
-    <h1>Киновечер, на котором вы решаете, что смотреть.</h1>
+    <h1>Киновечер, на котором вы решаете, <br>что смотреть.</h1>
     <div class="items">
       <div class="item" v-for="item of items" :key="item.id">
         <img class="item-image" :src="item.image">
@@ -19,7 +19,7 @@ export default {
       items: [
         { image: "images/e_head1.svg", text: "Вы голосуете за 3 эмоции" },
         {
-          image: "images/e_head2.svg",
+          image: "images/1f916.svg",
           text:
             "Искусственный интеллект учитывает все голоса и выбирает 3 фильма"
         },
@@ -43,7 +43,7 @@ h1 {
   margin: auto;
   justify-content: space-between;
   width: 70%;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .item {
   width: 20vw;
@@ -51,7 +51,7 @@ h1 {
   text-align: center;
 }
 .item_text {
-  font-size: 37px;
+  font-size: 35px;
   margin-top: 25px;
 }
 .item-image {
@@ -278,6 +278,31 @@ h1 {
     font-size: 22px;
     color: black;
     font-weight: bold;
+  }
+}
+@media screen and (max-width: 400px) and (min-height: 500px) {
+  .items {
+    display: flex;
+    margin: auto;
+    height: 218px;
+    flex-direction: column;
+    justify-content: baseline;
+    width: 82%;
+    margin-top: 30px;
+  }
+  .item:nth-child(1) .item_text[data-v-01db5fee],
+  .item:nth-child(2) .item_text[data-v-01db5fee],
+  .item:nth-child(3) .item_text[data-v-01db5fee] {
+    font-size: 14px;
+    line-height: normal;
+    margin: 0;
+    margin: initial;
+    margin-left: 15px;
+    line-height: initial;
+    text-align: left;
+    width: 70%;
+    margin-top: 0;
+    margin-top: initial;
   }
 }
 </style>

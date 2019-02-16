@@ -1,7 +1,7 @@
 
 export default class Emojis {
     static all = [
-        { image: "images/e_unreal.svg", text: "Мистика", id: 15 },
+        { image: "images/e_unreal.svg", text: "Мистика", id: 16 },
         { image: "images/e_cruel.svg", text: "Жестокий", id: 11 },
         { image: "images/e_ekshn.svg", text: "Экшн", id: 3 },
         { image: "images/e_clever.svg", text: "Умный", id: 5 },
