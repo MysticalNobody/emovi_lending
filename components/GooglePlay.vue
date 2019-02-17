@@ -64,7 +64,6 @@ export default {
         this.top_emoji[i].push(Emojis.getById(data[i + 1].emotions[j]));
       }
     }
-    console.log(this.top_emoji);
     this.films = await this.getFilms();
   },
   methods: {
@@ -74,6 +73,11 @@ export default {
         var _films = await Api.getFilms(
           this.top_emoji[i].map(e => e.id).join(",")
         );
+        _films = _films.sort(function(a, b) {
+          if (a.rating_kp > b.rating_kp) return -1;
+          if (a.rating_kp < b.rating_kp) return 1;
+          return 0;
+        });
         try {
           this.top_films.push(_films[0]);
         } catch {}
